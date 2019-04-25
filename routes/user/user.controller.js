@@ -49,4 +49,4 @@ controller.delete_a_userModel = function(req,res){
 }
 
 
-module.exports = controller
+module.exports = controller;

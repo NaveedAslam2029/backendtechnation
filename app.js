@@ -29,7 +29,7 @@ app.use(function (req, res, next) {
 app.use('/finance', require('./routes/finance'));
 app.use('/item', require('./routes/Item'));
 app.use('/tax', require ('./routes/tax'));
-//  app.use('/invoice', require('./routes/invoices'));
+ app.use('/invoice', require('./routes/invoices'));
 app.use('/user', require('./routes/user'));
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
