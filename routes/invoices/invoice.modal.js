@@ -35,11 +35,30 @@ var invoiceSchema = Schema({
 		type:String,
 	},
 	item_quantity:{
-		quantity: String,
+		type: String,
 	},
 	item_discount:{
-		discount: String,
+		type: String,
+	},
+	email:{
+		type: String,
+	},
+	invoice_number:{
+		type: String,
+	},
+	shipping_charges:{
+		type: String,
+	},
+	adjustment:{
+		type: String,
+	},
+	total_cost:{
+		type: String,
+	},
+	terms:{
+		type: String,
 	}
+
 	
 });
 
