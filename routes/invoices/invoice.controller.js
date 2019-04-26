@@ -67,10 +67,10 @@ controller.get_all_invoiceModels = function(req,res){
     });
 }
 controller.create_a_invoiceModel = function(req,res){
-    var new_invoiceModel = new userModel(req.body);
+    var new_invoiceModel = new invoiceModel(req.body);
     // varnew_userModel  = new userModel(req.body);
     new_invoiceModel.save(function(err,invoice){
-        console.log('Successfullt Inserted')
+        console.log('Successfully Inserted')
         if (err)
         res.send (err);
         res.json(invoice);

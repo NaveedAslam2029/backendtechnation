@@ -44,6 +44,10 @@ var userSchema = Schema({
     address:{
         type:String,
     },
-
+    contacts:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"Customer"
+    }
+]
 });
 module.exports =mongoose.model('user',userSchema);

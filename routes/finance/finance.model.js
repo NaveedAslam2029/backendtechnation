@@ -82,7 +82,10 @@ var customerSchema = Schema({
 	{
 		  type:String,
 	},
-
+user:{
+	type:mongoose.Schema.Types.ObjectId,
+	ref:"user"
+}
 });
 
 module.exports = mongoose.model('Customer', customerSchema);

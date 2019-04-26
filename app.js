@@ -36,14 +36,14 @@ app.use(function (req, res, next) {
 next(createError(404));
 });
 //connecting to MongoDB 
-mongoose.connect('mongodb://admin:admin123@ds139946.mlab.com:39946/sum-finance');
-console.log('MonogDb is connected')
-mongoose.connection.on('error', function (err) {
-console.error('MongoDB connection error: ' + err);
-process.exit(-1);
-});
-// mongoose.connect('mongodb://localhost:27017/sum-finance');
-//  console.log('local db is connected')
+// mongoose.connect('mongodb://admin:admin123@ds139946.mlab.com:39946/sum-finance');
+// console.log('MonogDb is connected')
+// mongoose.connection.on('error', function (err) {
+// console.error('MongoDB connection error: ' + err);
+// process.exit(-1);
+// });
+mongoose.connect('mongodb://localhost:27017/sum-finance');
+ console.log('local db is connected')
 // error handler
 app.use(function (err, req, res, next) {
 // set locals, only providing error in development

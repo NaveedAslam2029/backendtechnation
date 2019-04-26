@@ -48,5 +48,13 @@ controller.delete_a_userModel = function(req,res){
     });
 }
 
+controller.get_all_contacts = function(req,res){
+    userModel.find({},function(err,contact){
+        console.log('one user against all contacts are Successfully fetched')
+        if(err)
+        res.send(err);
+        res.json(contact);
+    });
+}
 
 module.exports = controller;

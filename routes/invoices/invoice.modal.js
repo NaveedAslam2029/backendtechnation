@@ -17,10 +17,12 @@ var invoiceSchema = Schema({
 	invoice_date: 
 	{
 		type:Date,
+		default: Date.now()
 	},
 	Due_date: 
 	{
 		type:Date,
+		default: Date.now()
 	},
 	sales_person:
 	{
