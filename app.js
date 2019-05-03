@@ -30,7 +30,7 @@ app.use('/finance', require('./routes/finance'));
 app.use('/item', require('./routes/Item'));
 app.use('/tax', require ('./routes/tax'));
  app.use('/invoice', require('./routes/invoices'));
-app.use('/user', require('./routes/user'));
+ app.use('/user', require('./routes/user'));
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
 next(createError(404));
@@ -44,7 +44,7 @@ next(createError(404));
 // });
 mongoose.connect('mongodb://localhost:27017/sum-finance');
  console.log('local db is connected')
-// error handler
+// // error handler
 app.use(function (err, req, res, next) {
 // set locals, only providing error in development
 res.locals.message = err.message;
