@@ -9,7 +9,7 @@ var cors=require('cors');
 // for MongoDB connection 4
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://admin:admin123@ds139946.mlab.com:39946/sum-finance',{ useNewUrlParser: true });
+mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds215759.mlab.com:15759/commentdb',{ useNewUrlParser: true });
 var app = express();
 app.use(cors());
 // view engine setup
@@ -26,11 +26,9 @@ app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
   });
-app.use('/finance', require('./routes/finance'));
-app.use('/item', require('./routes/Item'));
-app.use('/tax', require ('./routes/tax'));
- app.use('/invoice', require('./routes/invoices'));
- app.use('/user', require('./routes/user'));
+//  app.use('/invoice', require('./routes/invoices'));
+ app.use('/blog', require('./routes/invoices/blog'));
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
 next(createError(404));
@@ -44,7 +42,7 @@ next(createError(404));
 // });
 mongoose.connect('mongodb://localhost:27017/sum-finance');
  console.log('local db is connected')
-// // error handler
+// // // error handler
 app.use(function (err, req, res, next) {
 // set locals, only providing error in development
 res.locals.message = err.message;
