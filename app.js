@@ -9,7 +9,10 @@ var cors=require('cors');
 // for MongoDB connection 4
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds215759.mlab.com:15759/commentdb',{ useNewUrlParser: true });
+// mongoose.connect('mongodb://admin:admin123@ds215759.mlab.com:15759/commentdb',{ useNewUrlParser: true });
+mongoose.connect('mongodb://admin:admin123@ds215759.mlab.com:15759/commentdb',{ useNewUrlParser: true });
+
+
 var app = express();
 app.use(cors());
 // view engine setup
@@ -35,13 +38,14 @@ next(createError(404));
 });
 //connecting to MongoDB 
 // mongoose.connect('mongodb://admin:admin123@ds139946.mlab.com:39946/sum-finance');
-// console.log('MonogDb is connected')
-// mongoose.connection.on('error', function (err) {
-// console.error('MongoDB connection error: ' + err);
-// process.exit(-1);
-// });
-mongoose.connect('mongodb://localhost:27017/sum-finance');
- console.log('local db is connected')
+mongoose.connect('mongodb://admin:admin123@ds215759.mlab.com:15759/commentdb');
+console.log('MonogDb is connected')
+mongoose.connection.on('error', function (err) {
+console.error('MongoDB connection error: ' + err);
+process.exit(-1);
+});
+// mongoose.connect('mongodb://localhost:27017/commentdb');
+//  console.log('local db is connected')
 // // // error handler
 app.use(function (err, req, res, next) {
 // set locals, only providing error in development
