@@ -22,28 +22,29 @@ controller.create_a_blogModel = function(req,res){
     });
     
 }
-controller.read_a_invoiceModel = function(req,res){
-    invoiceModel.findById(req.params.invoiceId, function(err,invoice){
+controller.read_a_blogModel = function(req,res){
+    console.log(req.params.blogid);
+    blogModel.findById(req.params.blogid, function(err,blog_post){
         console.log('Successfully fetched user id')
         if(err)
         res.send(err);
-        res.json(invoice);
+        res.json(blog_post);
     });
 }
-controller.update_a_invoiceModel = function(req,res){
-    invoiceModel.findOneAndUpdate({_id: req.params.invoiceId},req.body,{new : true},function(err,invoice){
+controller.update_a_blogModel = function(req,res){
+    blogModel.findOneAndUpdate({_id: req.params.blogid},req.body,{new : true},function(err,blog_post){
     console.log('successfully updated')
     if(err)
     res.send(err);
-    res.json(invoice);
+    res.json(blog_post);
 });
 }
-controller.delete_a_invoiceModel = function(req,res){
-    invoiceModel.remove({_id:req.params.invoiceId},function(err,invoice){
+controller.delete_a_blogModel = function(req,res){
+    blogModel.remove({_id:req.params.blogid},function(err,blog_post){
         console.log('Successfully Deleted')
         if(err)
         res.send(err);
-        res.json(invoice);
+        res.json(blog_post);
     });
 }
 

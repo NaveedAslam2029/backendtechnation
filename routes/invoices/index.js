@@ -6,8 +6,8 @@ var invoicecontroller = require('./invoice.controller')
 router.post('/create',invoicecontroller.create_a_invoiceModel);
 router.get('/get-all',invoicecontroller.get_all_invoiceModels);
 router.get('/get/:userId',invoicecontroller.read_a_invoiceModel);
-router.post('/update/:userId',invoicecontroller.update_a_invoiceModel);
-router.post('/delete/:userId', invoicecontroller.delete_a_invoiceModel);
+router.post('/update',invoicecontroller.update_a_blogModel);
+router.post('/delete', invoicecontroller.delete_a_blogModel);
 
 
 module.exports = router;
